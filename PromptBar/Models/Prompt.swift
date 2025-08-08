@@ -19,12 +19,20 @@ struct Prompt: Identifiable, Equatable, Codable {
     var analysisDescription: String?
     
     init(
-        id: UUID = UUID(),
+        id: UUID,
         title: String,
         content: String,
-        description: String? = nil,
-        tags: [Tag] = [],
-        isFavorite: Bool = false
+        description: String?,
+        tags: [Tag],
+        isFavorite: Bool,
+        createdAt: Date,
+        modifiedAt: Date,
+        usedCount: Int,
+        lastUsedAt: Date?,
+        category: String?,
+        analysisStatus: AnalysisStatus,
+        analysisConfidence: Double?,
+        analysisDescription: String?
     ) {
         self.id = id
         self.title = title
@@ -32,16 +40,40 @@ struct Prompt: Identifiable, Equatable, Codable {
         self.description = description
         self.tags = tags
         self.isFavorite = isFavorite
-        self.createdAt = Date()
-        self.modifiedAt = Date()
-        self.usedCount = 0
-        self.lastUsedAt = nil
-        
-        // Initialize analysis fields
-        self.category = nil
-        self.analysisStatus = .pending
-        self.analysisConfidence = nil
-        self.analysisDescription = nil
+        self.createdAt = createdAt
+        self.modifiedAt = modifiedAt
+        self.usedCount = usedCount
+        self.lastUsedAt = lastUsedAt
+        self.category = category
+        self.analysisStatus = analysisStatus
+        self.analysisConfidence = analysisConfidence
+        self.analysisDescription = analysisDescription
+    }
+
+    init(
+        id: UUID = UUID(),
+        title: String,
+        content: String,
+        description: String? = nil,
+        tags: [Tag] = [],
+        isFavorite: Bool = false
+    ) {
+        self.init(
+            id: id,
+            title: title,
+            content: content,
+            description: description,
+            tags: tags,
+            isFavorite: isFavorite,
+            createdAt: Date(),
+            modifiedAt: Date(),
+            usedCount: 0,
+            lastUsedAt: nil,
+            category: nil,
+            analysisStatus: .pending,
+            analysisConfidence: nil,
+            analysisDescription: nil
+        )
     }
 }
 

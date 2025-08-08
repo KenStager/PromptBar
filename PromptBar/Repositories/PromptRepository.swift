@@ -226,22 +226,29 @@ final class SQLitePromptRepository: PromptRepository {
         let analysisStatus = AnalysisStatus(rawValue: analysisStatusString) ?? .pending
         let analysisConfidence = row["analysis_confidence"] as? Double
         let analysisDescription = row["analysis_description"] as? String
-        
-        var prompt = Prompt(
+
+        // Map timestamp fields
+        let createdAtTime = (row["created_at"] as? Double) ?? (row["created_at"] as? Int64).map(Double.init) ?? Date().timeIntervalSince1970
+        let modifiedAtTime = (row["modified_at"] as? Double) ?? (row["modified_at"] as? Int64).map(Double.init) ?? createdAtTime
+        let lastUsedTime = (row["last_used_at"] as? Double) ?? (row["last_used_at"] as? Int64).map(Double.init)
+
+        let prompt = Prompt(
             id: id,
             title: title,
             content: content,
             description: description,
             tags: [], // TODO: Load tags separately
-            isFavorite: isFavorite
+            isFavorite: isFavorite,
+            createdAt: Date(timeIntervalSince1970: createdAtTime),
+            modifiedAt: Date(timeIntervalSince1970: modifiedAtTime),
+            usedCount: Int((row["used_count"] as? Int64) ?? 0),
+            lastUsedAt: lastUsedTime.map { Date(timeIntervalSince1970: $0) },
+            category: category,
+            analysisStatus: analysisStatus,
+            analysisConfidence: analysisConfidence,
+            analysisDescription: analysisDescription
         )
-        
-        // Set analysis properties
-        prompt.category = category
-        prompt.analysisStatus = analysisStatus
-        prompt.analysisConfidence = analysisConfidence
-        prompt.analysisDescription = analysisDescription
-        
+
         return prompt
     }
     
