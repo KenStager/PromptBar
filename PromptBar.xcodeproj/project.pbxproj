@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01000001 /* PromptBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000000 /* PromptBarApp.swift */; };
+		01000003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000002 /* AppDelegate.swift */; };
+		01000005 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000004 /* Prompt.swift */; };
+		01000007 /* SQLiteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000006 /* SQLiteDatabase.swift */; };
+		01000009 /* Migrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000008 /* Migrations.swift */; };
+		01000011 /* PromptRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000010 /* PromptRepository.swift */; };
+		01000013 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000012 /* DIContainer.swift */; };
+		01000015 /* Services/OllamaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000014 /* Services/OllamaClient.swift */; };
+		01000017 /* Services/AnalysisQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000016 /* Services/AnalysisQueue.swift */; };
+		01000019 /* Services/ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000018 /* Services/ClipboardManager.swift */; };
+		28512D452E4237D500B7A572 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D412E4237D500B7A572 /* PreferencesView.swift */; };
+		28512D462E4237D500B7A572 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D402E4237D500B7A572 /* MainView.swift */; };
+		28512D472E4237D500B7A572 /* PromptViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D422E4237D500B7A572 /* PromptViews.swift */; };
+		28512D482E4237D500B7A572 /* SavePromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D432E4237D500B7A572 /* SavePromptView.swift */; };
+		28512D492E4237D500B7A572 /* PromptDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D442E4237D500B7A572 /* PromptDetailView.swift */; };
+		28512D4C2E423F9800B7A572 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D4B2E423F9800B7A572 /* Theme.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01000000 /* PromptBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptBarApp.swift; sourceTree = "<group>"; };
+		01000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		01000004 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		01000006 /* SQLiteDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDatabase.swift; sourceTree = "<group>"; };
+		01000008 /* Migrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrations.swift; sourceTree = "<group>"; };
+		01000010 /* PromptRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptRepository.swift; sourceTree = "<group>"; };
+		01000012 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		01000014 /* Services/OllamaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/OllamaClient.swift; sourceTree = "<group>"; };
+		01000016 /* Services/AnalysisQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/AnalysisQueue.swift; sourceTree = "<group>"; };
+		01000018 /* Services/ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/ClipboardManager.swift; sourceTree = "<group>"; };
+		28512D402E4237D500B7A572 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		28512D412E4237D500B7A572 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		28512D422E4237D500B7A572 /* PromptViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptViews.swift; sourceTree = "<group>"; };
+		28512D432E4237D500B7A572 /* SavePromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePromptView.swift; sourceTree = "<group>"; };
+		28512D442E4237D500B7A572 /* PromptDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailView.swift; sourceTree = "<group>"; };
+		28512D4B2E423F9800B7A572 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FRAMEWORKS_BUILD_PHASE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DATABASE_GROUP /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				01000006 /* SQLiteDatabase.swift */,
+				01000008 /* Migrations.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		MODELS_GROUP /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01000004 /* Prompt.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		PRODUCTS_GROUP /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		PROMPTBAR_GROUP /* PromptBar */ = {
+			isa = PBXGroup;
+			children = (
+				28512D4B2E423F9800B7A572 /* Theme.swift */,
+				01000000 /* PromptBarApp.swift */,
+				01000002 /* AppDelegate.swift */,
+				01000012 /* DIContainer.swift */,
+				01000014 /* Services/OllamaClient.swift */,
+				01000016 /* Services/AnalysisQueue.swift */,
+				01000018 /* Services/ClipboardManager.swift */,
+				MODELS_GROUP /* Models */,
+				DATABASE_GROUP /* Database */,
+				REPOSITORIES_GROUP /* Repositories */,
+				28512D402E4237D500B7A572 /* MainView.swift */,
+				28512D412E4237D500B7A572 /* PreferencesView.swift */,
+				28512D422E4237D500B7A572 /* PromptViews.swift */,
+				28512D432E4237D500B7A572 /* SavePromptView.swift */,
+				28512D442E4237D500B7A572 /* PromptDetailView.swift */,
+			);
+			path = PromptBar;
+			sourceTree = "<group>";
+		};
+		REPOSITORIES_GROUP /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				01000010 /* PromptRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		ROOT_GROUP = {
+			isa = PBXGroup;
+			children = (
+				PROMPTBAR_GROUP /* PromptBar */,
+				PRODUCTS_GROUP /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		PROMPTBAR_TARGET /* PromptBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BUILD_CONFIG_LIST /* Build configuration list for PBXNativeTarget "PromptBar" */;
+			buildPhases = (
+				SOURCES_BUILD_PHASE /* Sources */,
+				FRAMEWORKS_BUILD_PHASE /* Frameworks */,
+				RESOURCES_BUILD_PHASE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PromptBar;
+			productName = PromptBar;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJECT_OBJECT /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					PROMPTBAR_TARGET = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = PROJECT_BUILD_CONFIG_LIST /* Build configuration list for PBXProject "PromptBar" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ROOT_GROUP;
+			productRefGroup = PRODUCTS_GROUP /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				PROMPTBAR_TARGET /* PromptBar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		RESOURCES_BUILD_PHASE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SOURCES_BUILD_PHASE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01000001 /* PromptBarApp.swift in Sources */,
+				01000003 /* AppDelegate.swift in Sources */,
+				01000005 /* Prompt.swift in Sources */,
+				28512D452E4237D500B7A572 /* PreferencesView.swift in Sources */,
+				28512D462E4237D500B7A572 /* MainView.swift in Sources */,
+				28512D472E4237D500B7A572 /* PromptViews.swift in Sources */,
+				28512D482E4237D500B7A572 /* SavePromptView.swift in Sources */,
+				28512D492E4237D500B7A572 /* PromptDetailView.swift in Sources */,
+				01000007 /* SQLiteDatabase.swift in Sources */,
+				01000009 /* Migrations.swift in Sources */,
+				01000011 /* PromptRepository.swift in Sources */,
+				01000013 /* DIContainer.swift in Sources */,
+				01000015 /* Services/OllamaClient.swift in Sources */,
+				01000019 /* Services/ClipboardManager.swift in Sources */,
+				28512D4C2E423F9800B7A572 /* Theme.swift in Sources */,
+				01000017 /* Services/AnalysisQueue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		APP_DEBUG_CONFIG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PromptBar/PromptBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PromptBar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.promptbar.PromptBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		APP_RELEASE_CONFIG /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PromptBar/PromptBar.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PromptBar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.promptbar.PromptBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DEBUG_CONFIG /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		RELEASE_CONFIG /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BUILD_CONFIG_LIST /* Build configuration list for PBXNativeTarget "PromptBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				APP_DEBUG_CONFIG /* Debug */,
+				APP_RELEASE_CONFIG /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		PROJECT_BUILD_CONFIG_LIST /* Build configuration list for PBXProject "PromptBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEBUG_CONFIG /* Debug */,
+				RELEASE_CONFIG /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = PROJECT_OBJECT /* Project object */;
+}

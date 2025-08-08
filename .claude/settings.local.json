@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "mcp__cameroncooke-xcode-build-mcp__discover_projs",
+      "mcp__cameroncooke-xcode-build-mcp__list_schems_proj",
+      "Bash(xcodebuild:*)",
+      "Bash(swift:*)",
+      "mcp__cameroncooke-xcode-build-mcp__build_mac_proj",
+      "Bash(find:*)",
+      "Bash(sudo xcode-select:*)",
+      "Bash(xcode-select:*)",
+      "mcp__cameroncooke-xcode-build-mcp__launch_mac_app",
+      "Bash(ls:*)",
+      "Bash(open:*)",
+      "Bash(grep:*)",
+      "Bash(pkill:*)",
+      "Bash(curl:*)",
+      "Bash(/usr/bin/xcodebuild:*)",
+      "mcp__smithery-ai-server-sequential-thinking__sequentialthinking",
+      "Bash(log show:*)",
+      "Bash(osascript:*)",
+      "Bash(console:*)",
+      "Bash(sqlite3:*)",
+      "Bash(\"/Users/kstager/Library/Developer/Xcode/DerivedData/PromptBar-auncqwbtnkzeklborhtlqhkklvxp/Build/Products/Debug/PromptBar.app/Contents/MacOS/PromptBar\")",
+      "Bash(log stream:*)",
+      "Bash(pbpaste)",
+      "Bash(rm:*)",
+      "Bash(/dev/null)",
+      "mcp__wonderwhy-er-desktop-commander__read_file",
+      "Bash(/Users/kstager/Library/Developer/Xcode/DerivedData/PromptBar-auncqwbtnkzeklborhtlqhkklvxp/Build/Products/Debug/PromptBar.app/Contents/MacOS/PromptBar)",
+      "Bash(pgrep:*)",
+      "Bash(timeout:*)"
+    ],
+    "deny": []
+  }
+}
