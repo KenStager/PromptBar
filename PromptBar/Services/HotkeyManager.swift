@@ -21,7 +21,7 @@ final class HotkeyManager {
         let keyCode: UInt32 = 35 // 'P' key
         
         let signature = OSType(0x50424152) // 'PBAR'
-        var hotKeyID = EventHotKeyID(signature: signature, id: 1)
+        let hotKeyID = EventHotKeyID(signature: signature, id: 1)
         
         let status = RegisterEventHotKey(
             keyCode,

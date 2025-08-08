@@ -17,6 +17,8 @@
 		01000015 /* Services/OllamaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000014 /* Services/OllamaClient.swift */; };
 		01000017 /* Services/AnalysisQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000016 /* Services/AnalysisQueue.swift */; };
 		01000019 /* Services/ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000018 /* Services/ClipboardManager.swift */; };
+		0100001B /* Services/HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100001A /* Services/HotkeyManager.swift */; };
+		0100001D /* UseCases/SavePromptUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0100001C /* UseCases/SavePromptUseCase.swift */; };
 		28512D452E4237D500B7A572 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D412E4237D500B7A572 /* PreferencesView.swift */; };
 		28512D462E4237D500B7A572 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D402E4237D500B7A572 /* MainView.swift */; };
 		28512D472E4237D500B7A572 /* PromptViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28512D422E4237D500B7A572 /* PromptViews.swift */; };
@@ -36,6 +38,8 @@
 		01000014 /* Services/OllamaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/OllamaClient.swift; sourceTree = "<group>"; };
 		01000016 /* Services/AnalysisQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/AnalysisQueue.swift; sourceTree = "<group>"; };
 		01000018 /* Services/ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/ClipboardManager.swift; sourceTree = "<group>"; };
+		0100001A /* Services/HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/HotkeyManager.swift; sourceTree = "<group>"; };
+		0100001C /* UseCases/SavePromptUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases/SavePromptUseCase.swift; sourceTree = "<group>"; };
 		28512D402E4237D500B7A572 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		28512D412E4237D500B7A572 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		28512D422E4237D500B7A572 /* PromptViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptViews.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				01000014 /* Services/OllamaClient.swift */,
 				01000016 /* Services/AnalysisQueue.swift */,
 				01000018 /* Services/ClipboardManager.swift */,
+				0100001A /* Services/HotkeyManager.swift */,
+				0100001C /* UseCases/SavePromptUseCase.swift */,
 				MODELS_GROUP /* Models */,
 				DATABASE_GROUP /* Database */,
 				REPOSITORIES_GROUP /* Repositories */,
@@ -198,6 +204,8 @@
 				01000013 /* DIContainer.swift in Sources */,
 				01000015 /* Services/OllamaClient.swift in Sources */,
 				01000019 /* Services/ClipboardManager.swift in Sources */,
+				0100001B /* Services/HotkeyManager.swift in Sources */,
+				0100001D /* UseCases/SavePromptUseCase.swift in Sources */,
 				28512D4C2E423F9800B7A572 /* Theme.swift in Sources */,
 				01000017 /* Services/AnalysisQueue.swift in Sources */,
 			);

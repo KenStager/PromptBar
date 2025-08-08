@@ -23,6 +23,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ notification: Notification) {
+        print("🚀 PromptBar: Application launched successfully!")
+        print("🚀 PromptBar: Debug logging enabled - look for 🔥 messages")
+        print("🚀 PromptBar: SavePromptUseCase now included in build ✅")
+        
         log("Application launching...")
         print("PromptBar: Application launching...")
         
@@ -166,136 +170,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 // MARK: - Phase 2 Components
-
-// HotkeyManager
-final class HotkeyManager {
-    static let shared = HotkeyManager()
-    private var hotKeyRef: EventHotKeyRef?
-    
-    private init() {}
-    
-    func registerHotkey() {
-        // Unregister existing hotkey first
-        unregisterHotkey()
-        
-        // Register Cmd+Shift+P hotkey
-        var eventType = EventTypeSpec(
-            eventClass: OSType(kEventClassKeyboard),
-            eventKind: UInt32(kEventHotKeyPressed)
-        )
-        
-        let modifiers = UInt32(cmdKey + shiftKey)
-        let keyCode: UInt32 = 35 // 'P' key
-        
-        let signature = OSType(0x50424152) // 'PBAR'
-        let hotKeyID = EventHotKeyID(signature: signature, id: 1)
-        
-        let status = RegisterEventHotKey(
-            keyCode,
-            modifiers,
-            hotKeyID,
-            GetEventDispatcherTarget(),
-            0,
-            &hotKeyRef
-        )
-        
-        if status != noErr {
-            print("Failed to register hotkey: \(status)")
-            return
-        }
-        
-        // Install event handler
-        InstallEventHandler(
-            GetEventDispatcherTarget(),
-            { _, _, _ in
-                DispatchQueue.main.async {
-                    NotificationCenter.default.post(
-                        name: .togglePromptBar,
-                        object: nil
-                    )
-                }
-                return noErr
-            },
-            1,
-            &eventType,
-            nil,
-            nil
-        )
-        
-        print("Hotkey Cmd+Shift+P registered successfully")
-    }
-    
-    func unregisterHotkey() {
-        if let hotKeyRef = hotKeyRef {
-            UnregisterEventHotKey(hotKeyRef)
-            self.hotKeyRef = nil
-        }
-    }
-    
-    deinit {
-        unregisterHotkey()
-    }
-}
-
-extension Notification.Name {
-    static let togglePromptBar = Notification.Name("togglePromptBar")
-}
-
-// SavePromptUseCase
-struct SavePromptUseCase {
-    let repository: PromptRepository
-    
-    func execute(title: String, content: String, description: String? = nil) async throws -> Prompt {
-        print("💾 USECASE: execute() called")
-        print("💾 USECASE: title = '\(title)' (length: \(title.count))")
-        print("💾 USECASE: content = '\(content.prefix(50))...' (length: \(content.count))")
-        print("💾 USECASE: description = '\(description ?? "nil")'")
-        
-        // Validate input
-        guard !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
-              !content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            print("💾 USECASE: Validation failed - empty title or content")
-            print("💾 USECASE: title.isEmpty: \(title.isEmpty), content.isEmpty: \(content.isEmpty)")
-            throw ValidationError.invalidInput
-        }
-        
-        // Create prompt
-        let prompt = Prompt(
-            title: title.trimmingCharacters(in: .whitespacesAndNewlines),
-            content: content.trimmingCharacters(in: .whitespacesAndNewlines),
-            description: description?.trimmingCharacters(in: .whitespacesAndNewlines)
-        )
-        
-        print("💾 USECASE: Created prompt - id: \(prompt.id), title: '\(prompt.title)'")
-        
-        // Save to repository
-        print("💾 USECASE: Calling repository.save()")
-        try await repository.save(prompt)
-        print("💾 USECASE: repository.save() completed successfully")
-        
-        // Queue for analysis (async, don't wait)
-        print("🔄 SAVEUSE: Enqueueing prompt for analysis: \(prompt.title)")
-        Task {
-            await AnalysisQueue.shared.enqueue(prompt)
-        }
-        
-        print("💾 USECASE: Returning saved prompt")
-        return prompt
-    }
-    
-    func executeFromClipboard(title: String, description: String? = nil) async throws -> Prompt? {
-        guard let clipboardContent = ClipboardManager.shared.currentText,
-              !clipboardContent.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            return nil
-        }
-        
-        return try await execute(
-            title: title,
-            content: clipboardContent,
-            description: description
-        )
-    }
-}
 
 // MARK: - DateFormatter Extension
 extension DateFormatter {
