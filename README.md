@@ -117,6 +117,15 @@ xcodebuild -scheme PromptBar -configuration Release
 xcodebuild test -scheme PromptBar
 ```
 
+### Bootstrap a Fresh Project & Repo
+If you need to spin up a brand-new project based on the PromptBar conventions, run:
+
+```bash
+tools/create_new_project.py MyNewPromptBar
+```
+
+The helper script creates a starter directory structure, populates placeholder documentation, and optionally initializes a git repository. See `docs/NEW_PROJECT_SETUP.md` for more details and customization options.
+
 ### Key Files
 - `AppDelegate.swift` - App lifecycle, NSStatusItem setup
 - `DIContainer.swift` - Dependency injection
