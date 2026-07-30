@@ -29,7 +29,7 @@ struct MainView: View {
         .onAppear {
             isSearchFocused = true
         }
-        .onChange(of: searchText) {
+        .onChange(of: searchText) { _ in
             withAnimation(Theme.Animation.quick) {
                 isSearching = !searchText.isEmpty
             }
